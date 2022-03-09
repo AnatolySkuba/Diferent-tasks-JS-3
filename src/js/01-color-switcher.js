@@ -13,12 +13,14 @@ const handleClickStart = () => {
   }, 1000);
   startBtn.removeEventListener("click", handleClickStart);
   stopBtn.addEventListener("click", handleClickStop);
+  startBtn.disabled = true;
 };
 
 const handleClickStop = () => {
   clearInterval(timerId);
   stopBtn.removeEventListener("click", handleClickStop);
   startBtn.addEventListener("click", handleClickStart);
+  startBtn.disabled = false;
 };
 
 startBtn.addEventListener("click", handleClickStart);

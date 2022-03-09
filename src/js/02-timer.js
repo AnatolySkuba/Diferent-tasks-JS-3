@@ -43,20 +43,22 @@ const options = {
     } else {
       startBtn.disabled = false;
 
-const handleClickStart = () => {
-  timerId = setInterval(() => {
-    currentDate = new Date();
-    const balanceTime = convertMs(selectedDates[0].getTime() - currentDate.getTime());
-    days.textContent = addLeadingZero(balanceTime.days);
-    hours.textContent = addLeadingZero(balanceTime.hours);
-    minutes.textContent = addLeadingZero(balanceTime.minutes);
-    seconds.textContent = addLeadingZero(balanceTime.seconds);    
-  }, 1000);
-  startBtn.removeEventListener("click", handleClickStart);
-};
+      const handleClickStart = () => {
+        timerId = setInterval(() => {
+        currentDate = new Date();
+        const balanceTime = convertMs(selectedDates[0].getTime() - currentDate.getTime());
+        days.textContent = addLeadingZero(balanceTime.days);
+        hours.textContent = addLeadingZero(balanceTime.hours);
+        minutes.textContent = addLeadingZero(balanceTime.minutes);
+        seconds.textContent = addLeadingZero(balanceTime.seconds);    
+        }, 1000);
+      startBtn.removeEventListener("click", handleClickStart);
+      startBtn.disabled = true;
+      myInput.disabled = true;
+      };
 
       startBtn.addEventListener("click", handleClickStart);
-    }
+    };
   },
 };
 
@@ -79,8 +81,8 @@ function convertMs(ms) {
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
   return { days, hours, minutes, seconds };
-}
+};
 
 function addLeadingZero(value) {
   return value.toString().padStart(2, "0");
-}
+};
