@@ -5,4 +5,4 @@ var t,o=arguments[3];!function(o,i){"function"==typeof t&&t.amd?t([],function(){
 },{}],"GyVV":[function(require,module,exports) {
 "use strict";var e=require("notiflix/build/notiflix-notify-aio");function t(t,n){Math.random()>.3?(e.Notify.success(`Fulfilled promise ${t} in ${n}ms`),console.log("+",t,n)):(e.Notify.failure(`Rejected promise ${t} in ${n}ms`),console.log("-",t,n))}let n=2;function o(e,o,r){setTimeout(()=>{t(1,e);const i=setInterval(()=>{n!==Number(r)+1?(t(n,Number(e)+(n-1)*o),n+=1):clearInterval(i)},o)},e)}const r=document.querySelector(".form");function i(e){e.preventDefault(),n=2;const{elements:{delay:t,step:r,amount:i}}=e.currentTarget;o(t.value,r.value,i.value),e.currentTarget.reset()}r.addEventListener("submit",i);
 },{"notiflix/build/notiflix-notify-aio":"MeeU"}]},{},["GyVV"], null)
-//# sourceMappingURL=/goit-js-hw-09/03-promises.ec90816f.js.map
+//# sourceMappingURL=/Diferent-tasks-JS-3/03-promises.ec90816f.js.map
